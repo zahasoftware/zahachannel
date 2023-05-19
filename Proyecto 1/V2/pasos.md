@@ -1,9 +1,14 @@
+NOTA: En el video no aparece -p 5432:5432, para que lo consideren
 ```ps
-docker volume create mi_postgresql_data
-docker volume ls
+> docker volume create mi_postgresql_data
+> docker volume ls
 
-docker run --name mi_postgresql -e POSTGRES_PASSWORD=contraseña -v mi_postgresql_data:/var/lib/postgresql/data -d postgres
-docker ps
+> docker run --name mi_postgresql -p 5432:5432 -e POSTGRES_PASSWORD=contraseña -v mi_postgresql_data:/var/lib/postgresql/data -d postgres
+
+#Pueden crearlo sin volumen y en ruta local (Ver: -v c:\<ruta>:/var/lib/postgresql/data)
+docker run --name mi_postgresql -p 5432:5432 -e POSTGRES_PASSWORD=contraseña -v c:\<ruta>:/var/lib/postgresql/data 
+
+> docker ps
 ```
 
 ```SQL
@@ -40,6 +45,8 @@ CREATE TABLE detalles_facturas (
 docker exec -it mi_postgresql psql -U postgres
 CREATE DATABASE mi_proyecto;
 \q
+
+***El script pueden ejecutarlo en bash o powershell de la siguiente forma:***
 
 #bash
 docker exec -i mi_postgresql psql -U postgres mi_proyecto < /ruta/al/script_facturas.sql
