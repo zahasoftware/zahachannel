@@ -45,9 +45,11 @@ CREATE TABLE detalles_facturas (
 docker exec -it mi_postgresql psql -U postgres
 CREATE DATABASE mi_proyecto;
 \q
+```
 
 ***El script pueden ejecutarlo en bash o powershell de la siguiente forma:***
 
+```ps
 #bash
 docker exec -i mi_postgresql psql -U postgres mi_proyecto < /ruta/al/script_facturas.sql
 
