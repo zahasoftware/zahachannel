@@ -8,7 +8,7 @@ docker ps
 ```powershell
 dotnet new webapi -o webapi
 cd webapi
-```powershell
+```
 
 **Instala nugets de EF, para inicializar el contexto
 ```powershell
