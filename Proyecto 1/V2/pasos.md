@@ -49,14 +49,15 @@ CREATE DATABASE mi_proyecto;
 
 ***El script pueden ejecutarlo en bash o powershell de la siguiente forma:***
 
-```ps
+```powershell
 #bash
 docker exec -i mi_postgresql psql -U postgres mi_proyecto < /ruta/al/script_facturas.sql
 
 #powershell
 cat /ruta/al/script_facturas.sql | docker exec -i mi_postgresql psql -U postgres mi_proyecto
+```
 
-
+```powershell
 docker exec -it mi_postgresql psql -U postgres
 \l
 \c mi_proyecto
