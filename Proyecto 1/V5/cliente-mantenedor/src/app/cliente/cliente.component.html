@@ -1,0 +1,9 @@
+<div class="container mt-4">
+  <h2>Mantenedor de Clientes</h2>
+  <button class="btn btn-primary mt-3" (click)="cargarClientes()">Cargar Clientes</button>
+  <ul class="list-group mt-3" *ngIf="clientes">
+    <li class="list-group-item" *ngFor="let cliente of clientes">
+      {{ cliente.nombre }} - {{ cliente.direccion }} - {{ cliente.telefono }}
+    </li>
+  </ul>
+</div>
